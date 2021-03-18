@@ -1,24 +1,38 @@
-# README
+## users テーブル
+| Column              | Type   | Options                  |
+| ------------------- | ------ | ------------------------ |
+| nickname            | string | null: false, index: true |
+| email               | string | null: false              |
+| encrypted_password  | string | null: false              |
+| profile             | text   | null: false |
+| art_style           | text   | null: false |
+| influenced_by       | text   |    |
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+### Association
+- has_many :portfolios
+- has_many :comments
 
-Things you may want to cover:
+## Portfolios テーブル
+| Column      | Type      | Options           |
+| ---------  | ---------- | ----------------- |
+| title      | string     | null: false|
+| catch_copy | text       | null: false|
+| concept    | text       | null: false|
+| image      | ActiveStorageで実装|
+| youtube    | text       |       
+| soundcloud | text       |
+| user       | references | 
 
-* Ruby version
+### Association
+- belongs_to :user
+- has_many :comments
 
-* System dependencies
+## comments テーブル
+| Column   | Type      | Options     |
+| -------- | ------    | ----------- |
+| text     | text      | null: false |
+| user     | references| |
+| Portfolio| references|  |
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+- belongs_to :user
+- belongs_to :Portfolio
