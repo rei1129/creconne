@@ -1,0 +1,37 @@
+<div class="main">
+  <div class="inner">
+    <div class="user__wrapper">
+      <h2 class="page-heading">
+        <%= "#{@user.nickname}名さんの情報"%>
+      </h2>
+      <table class="table">
+        <tbody>
+          <tr>
+            <th class="table__col1">名前</th>
+            <td class="table__col2"><%= @user.nickname %></td>
+          </tr>
+          <tr>
+            <th class="table__col1">プロフィール</th>
+            <td class="table__col2"><%= @user.profile %></td>
+          </tr>
+          <tr>
+            <th class="table__col1">職種</th>
+            <td class="table__col2"><%= @user.art_style %></td>
+          </tr>
+          <tr>
+            <th class="table__col1">影響を受けたアーティスト</th>
+            <td class="table__col2"><%= @user.influenced_by %></td>
+          </tr>
+        </tbody>
+      </table>
+      <h2 class="page-heading">
+        <%= "#{@user.nickname}のプロトタイプ"%>
+      </h2>
+      <div class="user__card">
+        <% @portfolios.each do |portfolio| %>
+          <%= render partial:"portfolios/portfolio", locals: {portfolio: portfolio} %>
+        <% end%>
+      </div>
+    </div>
+  </div>
+</div>
