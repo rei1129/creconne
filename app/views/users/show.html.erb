@@ -4,6 +4,19 @@
       <h2 class="page-heading">
         <%= "#{@user.nickname}名さんの情報"%>
       </h2>
+      
+      <%= @user.follow_count %>
+<%= link_to "フォロー", {controller: :users,action: :follow_list,user_id: @user.id}, method: :get %>
+<%# #クリックすると、フォローリストに飛ぶ %>
+<%= @user.followers_count %>
+<%= link_to "フォロワー", {controller: :users,action: :follower_list,user_id: @user.id}, method: :get %>
+<%# #クリックすると、フォロワーリストに飛ぶ %>
+
+<% if current_user.id != @user.id %>
+  <%= render 'follow_form' %>
+<% end %>
+<%# #ユーザーがカレントユーザーじゃなかったら、'_follow_form.html.erb'を表示 %>
+
       <table class="table">
         <tbody>
           <tr>

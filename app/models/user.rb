@@ -14,6 +14,8 @@ class User < ApplicationRecord
 
   has_many :comments, dependent: :destroy
 
+  acts_as_followable #フォロワー機能
+  acts_as_follower   #フォロー機能
 
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
