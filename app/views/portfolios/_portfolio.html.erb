@@ -1,0 +1,12 @@
+<div class="card">
+  <%= link_to image_tag(portfolio.image, class: :card__img ), portfolio_path(portfolio.id) %>
+  <div class="card__body">
+    <%= link_to portfolio.title, portfolio_path(portfolio.id), method: :get, class: :card__title%>
+    <p class="card__summary">
+      <%= portfolio.concept %>
+    </p>
+    <%= link_to "by #{portfolio.user.nickname}", user_path(portfolio.user_id), class: :card__user %>
+  </div>
+</div>
+
+
