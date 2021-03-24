@@ -1,14 +1,18 @@
 Rails.application.routes.draw do
   devise_for :users
+  resources :users, :only => [:index, :show]
+  resources :rooms, :only => [:create, :show, :index]
+  resources :messages, :only => [:create]
+  
   root to: "portfolios#index"
+
   resources :portfolios do
     resources :comments, only: :create
   end
   #get 'portfolios/index'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
-  resources :users, only: :show
 
-  put 'users/follow/:user_id' => 'users#follow'
+put 'users/follow/:user_id' => 'users#follow'
 put 'users/unfollow/:user_id' => 'users#unfollow'
 #フォローとフォローを外すアクション
 

@@ -23,11 +23,29 @@
   <%= render 'follow_form' %>
   </button>
 <% end %>
+<% if @user.id == current_user.id %>
+
+<% else %>
+  <% if @isRoom == true %>
+  <button class="btn btn-primary btn-round">
+    <p><a href="/rooms/<%= @roomId %>">チャットへ</a>
+    </button>
+  <% else %>
+    <%= form_for @room do |f| %>
+      <%= fields_for @entry do |e| %>
+        <%= e.hidden_field :user_id, :value=> @user.id %>
+      <% end %>
+      <%= f.submit "チャットを始める" %>
+    <% end %>
+  <% end %>
+<% end %>
         </div>
       </div>
     </div>
   </div>
 </div>
+
+
 
 
 <%# #ユーザーがカレントユーザーじゃなかったら、'_follow_form.html.erb'を表示 %>
@@ -50,7 +68,6 @@
     <td><%= @user.influenced_by %></td>
   </tr>
 </table>
-
 
       <h2 class="page-heading">
         <%= "#{@user.nickname}のプロトタイプ"%>
