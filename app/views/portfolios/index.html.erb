@@ -31,6 +31,8 @@
        </div>
     <% end %>
 
+
+
   
 <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
   <ol class="carousel-indicators">
@@ -40,21 +42,21 @@
   </ol>
   <div class="carousel-inner" role="listbox">
     <div class="carousel-item">
-     <%= link_to image_tag("bg1.jpg", class: :d_block), root_path %>
+     <%= link_to image_tag("slider-01.jpeg", class: :d_block), root_path %>
       <div class="carousel-caption d-none d-md-block">
-        <h5>Nature, United States</h5>
+        <h5>イラストレーター</h5>
       </div>
     </div>
     <div class="carousel-item active">
-     <%= link_to image_tag("bg3.jpg", class: :d_block), root_path %>
+     <%= link_to image_tag("slider-04.jpeg", class: :d_block), root_path %>
       <div class="carousel-caption d-none d-md-block">
-        <h5>Somewhere Beyond, United States</h5>
+        <h5>写真家</h5>
       </div>
     </div>
     <div class="carousel-item">
-     <%= link_to image_tag("bg4.jpg", class: :d_block), root_path %>
+     <%= link_to image_tag("slider-03.jpeg", class: :d_block), root_path %>
       <div class="carousel-caption d-none d-md-block">
-        <h5>Yellowstone National Park, United States</h5>
+        <h5>アーティスト</h5>
       </div>
     </div>
   </div>
@@ -66,46 +68,75 @@
   </a>
 </div>
 
+<div class="container">
+  <div class="row artlist">
+    <div class="d-block mx-auto">
+      <span class="badge badge-info">
+      <h1>CreConneとは</h1>
+      </span>
+    </div>
+  </div>
+</div>
+
+
+<div class="container">
+  <div class="row">
+    <div class="d-block mx-auto">
+      <span class="badge badge-info">
+      <%= link_to image_tag("creconne-0.jpg", class: :img_hidden), root_path %>
+      </span>
+    </div>
+  </div>
+</div>
+
 
 <div class="container container-m">
-<div class="card-deck">
+ <div class="card-deck">
   <div class="card">
-      <%= link_to image_tag("47457.jpg", class: :img_hidden), root_path %>
-
-   <div class="card-body">
-      <h5 class="card-title">Card title</h5>
-      <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-      <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+      <%= link_to image_tag("Creconne-01.jpg", class: :img_hidden), root_path %>
+      <div class="card-body">
+      <h5 class="card-title">クリエイターのためのプラットフォーム</h5>
+      <p class="card-text">クリエイターとクリエイターが繋がる為のプラットフォームです</p>
     </div>
   </div>
+
   <div class="card">
-      <%= link_to image_tag("47457.jpg", class: :img_hidden), root_path %>
-    <%# <img class="card-img-top" src=".../100px200/" alt="Card image cap"> %>
-    <div class="card-body">
-      <h5 class="card-title">Card title</h5>
-      <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
-      <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+      <%= link_to image_tag("follow.jpg", class: :img_hidden), root_path %>
+      <div class="card-body">
+      <h5 class="card-title">気になるクリエイターはフォロー</h5>
+      <p class="card-text">CreConneには気になるクリエイターをフォローできる機能があります</p>
     </div>
   </div>
-  <div class="card">
-    <%# <img class="card-img-top" src=".../100px200/" alt="Card image cap"> %>
-        <%= link_to image_tag("47457.jpg", class: :img_hidden), root_path %>
 
-    <div class="card-body">
-      <h5 class="card-title">Card title</h5>
-      <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
-      <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+  <div class="card">
+      <%= link_to image_tag("DM.jpg", class: :img_hidden), root_path %>
+      <div class="card-body">
+      <h5 class="card-title">Dm機能</h5>
+      <p class="card-text">一緒に作品を作りたいクリエイターを見つけたらDMを送ってみよう</p>
     </div>
   </div>
  </div>
 </div>
 
-    <%# // ログインしているときは上記を表示する %>
-  <div class="card__wrapper">
-    <% @portfolios.each do |portfolio| %>
-     <%= render partial:"portfolio", locals:{ portfolio: portfolio} %>
-    <% end %>
+<div class="container">
+  <div class="row artlist">
+    <div class="d-block mx-auto">
+      <span class="badge badge-info">
+      <h1>作品一覧</h1>
+      </span>
+    </div>
   </div>
+</div>
+
+
+<%= render 'search_form', url: portfolios_path, q: @q %>
+
+
+  <%# <div class="card__wrapper"> %>
+    <%# <% @portfolios.each do |portfolio| %> 
+     <%# <%= render partial:"portfolio", locals:{ portfolio: portfolio} %>
+    <%# <% end %> 
+  <%# </div> %>
 </main>
 
 

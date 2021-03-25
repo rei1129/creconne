@@ -20,6 +20,9 @@ get 'users/follow_list/:user_id' => 'users#follow_list'
 get 'users/follower_list/:user_id' => 'users#follower_list'
 #フォロー・フォロワーの一覧ページ
 
+get 'portfolios/search'
+match '/portfolios',  to: 'portfolios#index', via: 'get'
+
 end
 
 
