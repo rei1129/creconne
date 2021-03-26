@@ -111,3 +111,4 @@ s3の実装、いいね機能、ビューの改善(特にチャット画面)
 
 - belongs_to :user
 - belongs_to :Portfolio
+
