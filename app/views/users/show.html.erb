@@ -26,6 +26,7 @@
 <% if @user.id == current_user.id %>
 
 <% else %>
+
   <% if @isRoom == true %>
   <button class="btn btn-primary btn-round">
     <p><a href="/rooms/<%= @roomId %>">チャットへ</a>
@@ -45,10 +46,7 @@
   </div>
 </div>
 
-
-
-
-<%# #ユーザーがカレントユーザーじゃなかったら、'_follow_form.html.erb'を表示 %>
+<%#ユーザーがカレントユーザーじゃなかったら、'_follow_form.html.erb'を表示 %>
 
 <table>
   <tr>
