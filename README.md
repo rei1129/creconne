@@ -10,7 +10,7 @@ CreConne(クリコネ)
 # DEMO
 ## トップページ
 ![トップページ](https://user-images.githubusercontent.com/73812599/112564262-4869fa00-8e1e-11eb-90ea-b7dd53a8c436.png)
-![トップページ２](https://user-images.githubusercontent.com/73812599/112564586-e3fb6a80-8e1e-11eb-9455-eb8f2a9e9bcd.png)
+![トップページ２](https://user-images.githubusercontent.com/73812599/112565861-45243d80-8e21-11eb-8106-e24ab21838f7.png)
 ![トップページ３](https://user-images.githubusercontent.com/73812599/112564635-f8d7fe00-8e1e-11eb-8bdd-e0323e33a3fd.png)
 
 ## 作品詳細ページ
