@@ -41,7 +41,7 @@ a {
   /*height:500px; */
   margin-bottom: 48px;
   padding: 20px 0;
-  background-image: url("head-logo2.jpg"); 
+  background-image: url("head-logo-new2.jpg"); 
 }
 .inner {
   width: 1024px;
@@ -197,7 +197,7 @@ height:400px;
   text-decoration: underline;
 }
 .prototype__image{
-  width: 40%;
+  width: 60%;
   margin: 0 auto;
   padding: 16px 0;
 }
