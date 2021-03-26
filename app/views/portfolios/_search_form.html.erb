@@ -1,0 +1,19 @@
+<%= search_form_for q, url: url do |f| %>
+  <div class="input-group mb-3">
+    <%= f.search_field :title_cont, class: "form-control", placeholder: '検索ワード' %>
+    <%= f.collection_select :genre_id_eq,Genre.all,:id,:name,include_blank: '指定なし' %>
+    <div class="input-group-append">
+      <%= f.submit "検索", class: "btn btn-primary" %>
+    </div>
+  </div>
+  <% if @portfolios.any? %>
+  <div class="row d-flex">
+    <%= render @portfolios %>
+  </div>
+<% else %>
+  <h1><%= '検索結果がありません。' %></h1>
+<% end %>
+<%= paginate @portfolios %>
+
+<% end %>
+

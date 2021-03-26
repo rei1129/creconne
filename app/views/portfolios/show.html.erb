@@ -31,6 +31,13 @@
             <%= @portfolio.concept %>
           </p>
         </div>
+
+    <% if  @portfolio.youtube_link.present? %>
+        <div class="prototype__detail">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/<%=@portfolio.youtube_link%>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+    <%end%>
+
       </div>
       <div class="prototype__comments">
         <% if user_signed_in? %>

@@ -37,11 +37,11 @@ a {
 /* ヘッダー */
 
 .header {
-  background-color: #f1f8fe;
-  height:500px;
+  /*bbackground-color: #f1f8fe;*/
+  /*height:500px; */
   margin-bottom: 48px;
   padding: 20px 0;
-  background-image: url("bg5.jpg");
+  background-image: url("head-logo-new2.jpg"); 
 }
 .inner {
   width: 1024px;
@@ -120,6 +120,10 @@ a {
 }
 
 /* メイン */
+body{
+  background-image: url("back-07-l.jpeg");
+}
+
 
 .greeting{
   margin-bottom: 20px;
@@ -171,6 +175,11 @@ margin: 0 calc(50% - 50vw);
 width: 100vw;
 height:400px;
 }
+
+.artlist{
+  margin-top: 20px;
+  margin-bottom: 15px;
+}
 /* 詳細ページ */
 .prototype__wrapper{
   min-height: calc(100vh - 161px);
@@ -188,7 +197,7 @@ height:400px;
   text-decoration: underline;
 }
 .prototype__image{
-  width: 40%;
+  width: 60%;
   margin: 0 auto;
   padding: 16px 0;
 }

@@ -4,7 +4,13 @@ class PortfoliosController < ApplicationController
 
 
   def index
-    @portfolios = Portfolio.includes(:user)
+    @q = Portfolio.ransack(params[:q])
+    @portfolios = @q.result.includes(:user).page(params[:page]) 
+  end
+
+  def bookmarks
+    @q = portfolios.ransack(params[:q]) # 検索オブジェクト作成
+    @portfolios = @q.result.includes(:user).page(params[:page]) # 検索結果(検索しなければ全件取得
   end
 
   def new
@@ -47,6 +53,8 @@ class PortfoliosController < ApplicationController
     redirect_to root_path
   end
 
+
+  
   def move_to_index
     portfolio = Portfolio.find(params[:id])
     unless user_signed_in? && current_user.id == portfolio.user_id
@@ -56,7 +64,7 @@ class PortfoliosController < ApplicationController
 
   private
   def portfolio_params
-    params.require(:portfolio).permit(:title, :catch_copy, :concept, :image, :youtube_link, :soundcloud).merge(user_id: current_user.id)
+    params.require(:portfolio).permit(:title, :catch_copy, :concept, :image, :youtube_link, :soundcloud, :genre_id).merge(user_id: current_user.id)
   end
 
 end
