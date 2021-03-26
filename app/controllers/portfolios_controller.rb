@@ -34,6 +34,7 @@ class PortfoliosController < ApplicationController
 
   def edit
     @portfolio = Portfolio.find(params[:id])
+    redirect_to action: :index unless current_user.id == @portfolio.user_id
   end
 
   def update
@@ -49,8 +50,12 @@ class PortfoliosController < ApplicationController
 
   def destroy
     @portfolio = Portfolio.find(params[:id])
+    if current_user.id == @portfolio.user_id
     @portfolio.destroy
     redirect_to root_path
+    else
+      redirect_to portfolio_path
+    end  
   end
 
 
