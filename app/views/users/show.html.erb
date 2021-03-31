@@ -10,19 +10,22 @@
   <div class="d-block mx-auto">
     <img src=<%= @user.image %> class = "icon_image">
     <h2 class="text-white"><%= "#{@user.nickname}さんの情報"%></h2>
+  
     <h3 class="follow_followers">
     <%= @user.follow_count %>
-<%= link_to "フォロー", {controller: :users,action: :follow_list,user_id: @user.id},:style => "color:white;",method: :get %>
-<%# #クリックすると、フォローリストに飛ぶ %>
-<%= @user.followers_count %>
-<%= link_to "フォロワー", {controller: :users,action: :follower_list,user_id: @user.id},:style => "color:white;", method: :get %>
-<%# #クリックすると、フォロワーリストに飛ぶ %>
-</h3>
+      <%= link_to "フォロー", {controller: :users,action: :follow_list,user_id: @user.id},:style => "color:white;",method: :get %>
+      <%# #クリックすると、フォローリストに飛ぶ %>
+      <%= @user.followers_count %>
+      <%= link_to "フォロワー", {controller: :users,action: :follower_list,user_id: @user.id},:style => "color:white;", method: :get %>
+      <%# #クリックすると、フォロワーリストに飛ぶ %>
+    </h3>
+
 <% if current_user.id != @user.id %>
-<button type="button" class="btn btn-info">
-  <%= render 'follow_form' %>
+  <button type="button" class="btn btn-info">
+    <%= render 'follow_form' %>
   </button>
 <% end %>
+
 <% if @user.id == current_user.id %>
 
 <% else %>
@@ -45,9 +48,7 @@
     </div>
   </div>
 </div>
-
 <%#ユーザーがカレントユーザーじゃなかったら、'_follow_form.html.erb'を表示 %>
-
 <table>
   <tr>
     <th>名前</th>
@@ -67,14 +68,16 @@
   </tr>
 </table>
 
-      <h2 class="page-heading">
-        <%= "#{@user.nickname}の作品"%>
-      </h2>
-      <div class="user__card">
-        <% @portfolios.each do |portfolio| %>
-          <%= render partial:"portfolios/portfolio", locals: {portfolio: portfolio} %>
-        <% end%>
-      </div>
+    <h2 class="page-heading">
+     <%= "#{@user.nickname}の作品"%>
+    </h2>
+
+    <div class="user__card">
+      <% @portfolios.each do |portfolio| %>
+      <%= render partial:"portfolios/portfolio", locals: {portfolio: portfolio} %>
+      <% end%>
+    </div>
+
     </div>
   </div>
 </div>
